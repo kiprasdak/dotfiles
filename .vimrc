@@ -16,8 +16,11 @@ set expandtab
 set autoindent
 set smartindent
 set number
+set relativenumber
+set spell
 set hlsearch
 set incsearch
 set timeoutlen=1000 ttimeoutlen=0
+set switchbuf=useopen,usetab
 
 colo PaperColor
