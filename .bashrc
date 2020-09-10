@@ -4,13 +4,15 @@ cd ~
 # alias
 alias py='python3'
 alias s='source ~/.bashrc'
+alias yarn='kaban run node yarn'
+alias fd='fdfind'
 
 # z
 . ~/.zz/z.sh
 
 # kaban
 
-. ~/src/kaban/kaban.sh
+alias kaban='~/src/kaban/kaban.py'
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)

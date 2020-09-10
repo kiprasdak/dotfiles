@@ -1,9 +1,9 @@
 call plug#begin('~/.vim/plugged')
-Plug 'sheerun/vim-polyglot'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'mhinz/vim-startify'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'sheerun/vim-polyglot'
+"Plug 'mhinz/vim-startify'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 call plug#end()
 
 if (has("termguicolors"))
