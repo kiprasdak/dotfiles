@@ -3,8 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Correct colors
@@ -14,6 +12,7 @@ endif
  
 " Theme
 colo PaperColor
+set background=light
 
 " Formatting
 set tabstop=2
