@@ -4,9 +4,6 @@ cd ~
 # default editor
 export VISUAL=vim
 
-# FZF
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore --hidden --follow 2> /dev/null"
-
 # alias
 alias py='python3'
 alias s='source ~/.bashrc'
