@@ -6,16 +6,16 @@ Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Theme
-"colo gruvbox
-"set background=dark
-"hi Normal guibg=NONE ctermbg=NONE
-"hi clear SpellBad
-"hi SpellBad cterm=underline
-"set termguicolors
+colo gruvbox
+set background=dark
+hi Normal guibg=NONE ctermbg=NONE
+hi clear SpellBad
+hi SpellBad cterm=underline
+set termguicolors
 
 " Theme
-colo PaperColor
-set background=light
+"colo PaperColor
+"set background=light
 
 " Formatting
 set tabstop=2
@@ -63,9 +63,9 @@ let g:netrw_winsize=30
 
 " Keymaps
 let mapleader = " "
-nnoremap <leader>f :find 
-nnoremap <leader>s :vimgrep 
-nnoremap <leader>S :vimgrep   %<left><left><left>
+nnoremap <leader>f :find \c
+nnoremap <leader>s :vimgrep \c %<left><left><left><left>
+nnoremap <leader>S :vimgrep \c **<left><left><left><left><left>
 nnoremap <silent><leader>q :call ToggleQuickFix()<CR>
 nnoremap <silent><leader>j :cn<CR>
 nnoremap <silent><leader>k :cp<CR>
@@ -81,6 +81,20 @@ function! ToggleQuickFix()
   endif
 endfunction
 
+" Close empty buffers
+function! DeleteEmptyBuffers()
+    let [i, n; empty] = [1, bufnr('$')]
+    while i <= n
+        if bufexists(i) && bufname(i) == ''
+            call add(empty, i)
+        endif
+        let i += 1
+    endwhile
+    if len(empty) > 0
+        exe 'bdelete' join(empty)
+    endif
+endfunction
+
 " Persistent folds
 augroup PersistentFolds
   autocmd!
@@ -89,5 +103,6 @@ augroup PersistentFolds
 augroup END
 
 " Read project specific .vimrc, then add set path+=/path/to/folder for find command
-" Read project specific .vimrc, then add set wildignore+=/path/** for vimgrep command
+" Read project specific .vimrc, then add set wildignore+=/path/** or
+" wildignore+=*/folder/* to ignore specific folder
 set exrc
