@@ -1,3 +1,5 @@
+set -o vi
+
 # dir
 cd ~
 
@@ -5,8 +7,9 @@ cd ~
 export VISUAL=vim
 
 # alias
-alias py='python3'
 alias s='source ~/.bashrc'
+alias python='python3'
+alias less='less -R'
 
 # z
 . ~/.zz/z.sh
@@ -135,3 +138,13 @@ LS_COLORS="ow=01;36;01:tw=00;36;01" && export LS_COLORS
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Created by `pipx` on 2021-09-12 08:12:53
+export PATH="$PATH:/home/x/.local/bin"
+eval "$(register-python-argcomplete pipx)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
